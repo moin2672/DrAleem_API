@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const accountSid = 'AC8c6681836c7626d3ccfe722bea3413dc'; 
-const authToken = 'ef1ab8e9b15cd2ab37684d306b9e90cc'; 
+const authToken = 'f2d4f25e32ec8bde0509ee0555362669'; 
 const client = require('twilio')(accountSid, authToken); 
 
 
