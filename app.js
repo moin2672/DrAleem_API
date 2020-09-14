@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 //Import Routes
 const medsRoute = require('./routes/meds');
 
-app.use('/api/meds', medsRoute);
+app.use('/meds', medsRoute);
 
 //ROUTES
 app.get('/',(req, res) => { 
@@ -21,7 +21,7 @@ app.get('/',(req, res) => {
 
 //How to start listening to the server
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 app.listen(port, () => console.log(`Listening on port ${port}..`));
 
 

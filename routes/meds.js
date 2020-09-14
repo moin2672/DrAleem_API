@@ -8,13 +8,16 @@ const client = require('twilio')(accountSid, authToken);
 
 
 //SUBMIT A NEW //Medicine
-router.post('/notify', async (req, res) => {
+router.post('/', async (req, res) => {
 
-    if (req.body.message === "") {
+    if (req.body.userName === "" || req.body.userPhone === "") {
         res.status(400).send(error.details[0].message)
         return;
     }
-
+    if(req.body){
+        console.log("req.body");
+        console.log(req.body);
+    }
     InWhatsApp = "";
     if (req.body.userInWhatsapp) {
         InWhatsApp = "~Available in WhatsApp";
@@ -34,7 +37,7 @@ router.post('/notify', async (req, res) => {
         .done()
 
 
-    res.status(200).send({ message: "Notification sent successfully!!" });
+    res.status(200).send({ message: "Notification sent successfully!!", body: req.body });
 
 
 })
@@ -64,7 +67,7 @@ router.post('/order', async (req, res) => {
         .done()
 
 
-    res.status(200).send({ message: "Notification sent successfully!!" });
+    res.status(200).send({ message: "Notification sent successfully!!" , body: req.body});
 
 
 })
